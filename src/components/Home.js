@@ -6,6 +6,7 @@ import Card from './Card'
 import BookingForm from './BookingForm'
 import { useSelector } from 'react-redux'; 
 import SearchFilter from "./SearchFilter";
+import Loader from "./Loader";
 
 
 function Home() {
@@ -52,11 +53,12 @@ function Home() {
         
 
         <div className="  flex flex-col px-10  bg-white flex-3/4">
-        <div className="overflow-y-scroll" style={{ maxHeight: '85vh' , scrollbarWidth: 'none', '-ms-overflow-style': 'none' }}>
+          {filteredProperties ? (<div className="overflow-y-scroll" style={{ maxHeight: '85vh' , scrollbarWidth: 'none', '-ms-overflow-style': 'none' }}>
               {filteredProperties.map((property) => (
                 <SmallCard property={property} key={property.id} />
               ))}
-            </div>
+            </div>) : <Loader/>}
+        
           <button
         onClick={openModal}
         className="fixed bottom-4  bg-green-400 text-white px-10 py-2 rounded-full cursor-pointer md:hidden"
