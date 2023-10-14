@@ -9,6 +9,7 @@ $ npm start
 ## **Built with -**
 
 - React JS
-- React Context API + useReducer
+- Redux
+-react-router-dom
 - React Router v6
 - Vanilla CSS integrated with BoostMat UI Component Library
