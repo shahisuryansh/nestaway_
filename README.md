@@ -1,8 +1,8 @@
 ## **How to install and run locally ?**
 
 ```
-$ git clone https://github.com/rutvikpumak/pustaka.git
-$ cd pustaka
+$ git clone https://github.com/shahisuryansh/nestaway_.git
+
 $ npm install
 $ npm start
 
