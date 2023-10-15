@@ -53,6 +53,7 @@ const BookinForm = () => {
     if (property.id) {
         dispatch(removeProperty(property.id));
       }
+      
       navigate('/formsubmission', { state: { property } });
   };
   return (

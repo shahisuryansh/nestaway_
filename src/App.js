@@ -9,6 +9,7 @@ import BookingForm from "./components/BookingForm"
 import { useSelector, useDispatch } from 'react-redux';
 import { setProperties, removeProperty } from './action';
 import CrackerAnimation from "./components/CrackerAnimation";
+import Error from "./components/Error";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/card" element={<Card />} />
         <Route path="/bookingForm" element={<BookingForm/>}/>
         <Route path="/formsubmission" element={<CrackerAnimation/>}/>
+        <Route element={<Error />} />
       </Routes>
     </Router>
     
