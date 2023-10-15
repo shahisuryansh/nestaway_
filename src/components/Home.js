@@ -16,6 +16,9 @@ function Home() {
   
   // Your properties state
   const properties = useSelector(state => state.properties.properties);
+  console.log(properties)
+  const removedProperties = useSelector(state => state.properties.removedProperties);
+  console.log(removedProperties)
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -39,7 +42,7 @@ function Home() {
   console.log(selectedTenantTypes)
 
   return (
-    <div>
+    <div className=" h-100vh">
       <Header />
       <div className="flex">
         <div className="flex-1/4 hidden md:flex">
@@ -52,7 +55,7 @@ function Home() {
         </div>
         
 
-        <div className="  flex flex-col px-10  bg-white flex-3/4">
+        <div className="  flex flex-col px-10  bg-white flex-3/4 md:right-0 md:absolute ">
           {filteredProperties ? (<div className="overflow-y-scroll" style={{ maxHeight: '85vh' , scrollbarWidth: 'none', '-ms-overflow-style': 'none' }}>
               {filteredProperties.map((property) => (
                 <SmallCard property={property} key={property.id} />

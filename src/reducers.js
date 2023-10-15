@@ -1,6 +1,7 @@
 // reducers.js
 const initialState = {
     properties: [],
+    removedProperties: []
   };
   
   export const propertiesReducer = (state = initialState, action) => {
@@ -11,12 +12,21 @@ const initialState = {
           properties: action.properties,
         };
       case 'REMOVE_PROPERTY':
-        return {
-          ...state,
-          properties: state.properties.filter(property => property.id !== action.propertyId),
-        };
+        const removedProperty = state.properties.find(
+          (property) => property.id === action.propertyId
+        );
+        if (removedProperty) {
+          return {
+            properties: state.properties.filter(
+              (property) => property.id !== action.propertyId
+            ),
+            removedProperties: [...state.removedProperties, removedProperty],
+          };
+        }
+        return state; // Property not found in activeProperties
       default:
         return state;
+        
     }
   };
   

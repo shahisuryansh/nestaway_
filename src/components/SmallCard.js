@@ -23,8 +23,7 @@ const SmallCard = ({property}) => {
             </div>
             <h4 className='text-xl'>{property.bhk_details} {' '} {property.house_type} in {property.city}</h4>
             <div className='border-b w-10 pt-2'/>
-            <p className='pt-2 text-sm text-gray-500 flex-grow'><span className='capitalize absolute top-3 left-1 bg-[#000A] text-white backdrop-blur whitespace-nowrap rounded-full px-3 py-1 text-xs'>{property.gender}</span>
-            </p>
+            
             <div className='flex justify-between items-end pt-5'>
                 <div className='text-lg lg:2xl font-semibold pb-2 px-4'><span className='text-sm'>Rent :</span>{property.min_rent}</div>
                 <div className='text-lg lg:2xl font-extralight pb-2 '><span className='text-sm'>Deposit:</span>{property.min_bed_advance / property.min_rent}{'  ' }Months{' '}</div>
@@ -47,6 +46,7 @@ const SmallCard = ({property}) => {
       <button onClick={navigateToCard} className='px-5'>
         View Details
       </button>
+      
     </div>
        </div>
        </div>

@@ -60,7 +60,7 @@ const Cards = () => {
     </div>
      
       
-      <div className="mb-4 flex bg-red">
+      <div className="mb-4 md:flex bg-red">
         <div className='flex-1'>
           <div id="section1" className={`section ${activeSection === 'section1' ? 'active' : ''}`}>
           <div className="flex flex-wrap text-uppercase justify-between">

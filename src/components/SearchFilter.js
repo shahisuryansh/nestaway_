@@ -37,9 +37,9 @@ const SearchFilter = ({selectedTenantType,
   };
 
   return (
-    <div className="flex flex-col flex-1 gap-4">
+    <div className="flex flex-col flex-1 gap-4 nt-10">
       <div className="flex flex-col flex-1">
-        <span className="text-base mb-2">Filters</span>
+        <span className="text-lg font-bold mb-2">Filters</span>
         <div className="flex flex-col p-4 border gap-4 border-border rounded-xl">
           <FilterOption
             title="Tenant Type"
