@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import BookingForm from "./components/BookingForm"
 import { useSelector, useDispatch } from 'react-redux';
 import { setProperties, removeProperty } from './action';
+import CrackerAnimation from "./components/CrackerAnimation";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/card" element={<Card />} />
         <Route path="/bookingForm" element={<BookingForm/>}/>
+        <Route path="/formsubmission" element={<CrackerAnimation/>}/>
       </Routes>
     </Router>
     

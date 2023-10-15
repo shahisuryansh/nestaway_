@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import Header from './Header';
 import { useSelector, useDispatch } from 'react-redux';
 import { setProperties, removeProperty } from '../action';
 import { useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const validationSchema = Yup.object().shape({
@@ -24,6 +25,8 @@ const BookinForm = () => {
     const properties = useSelector(state => state.properties.properties);
     const location = useLocation();
     const property = location.state?.property;
+    const navigate = useNavigate();
+    
   const initialValues = {
     name: '',
     email: '',
@@ -41,8 +44,17 @@ const BookinForm = () => {
     if (property.id) {
         dispatch(removeProperty(property.id));
       }
+      navigate('/formsubmission', { state: { property } });
   };
-
+  const handleSubmit = (values) => {
+    // Handle form submission here
+    console.log(values);
+    console.log(property)
+    if (property.id) {
+        dispatch(removeProperty(property.id));
+      }
+      navigate('/formsubmission', { state: { property } });
+  };
   return (
     <>
     <Header/>
@@ -94,7 +106,8 @@ const BookinForm = () => {
             <Field type="text" name="applyCoupon" className="mt-1 p-2 border border-gray-300 rounded w-full" />
           </div>
 
-          <button type="submit" disabled={isSubmitting} className="bg-blue-500 text-white px-4 py-2 rounded-md">
+          
+          <button type="submit"   className="bg-blue-500 text-white px-4 py-2 rounded-md" onClick={handleSubmit}>
             Submit
           </button>
         </Form>
